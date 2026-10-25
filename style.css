@@ -1,0 +1,253 @@
+/* ===== Design tokens (Figma: Color System / Typography System) ===== */
+:root {
+  --primary: #778a50;
+  --background: #edf2c5;
+  --content-text: #7d7d7d;
+  --content-bg: #f7fbda;
+
+  --font-noto: "Noto Sans", sans-serif;
+  --font-arial: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  font-family: var(--font-arial);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+.page {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 36px 0 32px;
+  flex: 1;
+}
+
+/* ===== Header ===== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 62px;
+}
+
+/* Head1: Noto Sans Black 44px */
+.logo {
+  margin: 0;
+  font-family: var(--font-noto);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: normal;
+  color: var(--primary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 19px;
+}
+
+.social {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.social img {
+  width: 24px;
+  height: 24px;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--primary);
+}
+
+/* Text1: Noto Sans Bold 14px */
+.btn {
+  padding: 4px 8px;
+  border: 1px solid var(--primary);
+  border-radius: 3px;
+  font-family: var(--font-noto);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: normal;
+  color: var(--primary);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--primary);
+  color: var(--background);
+}
+
+/* ===== Nav ===== */
+.main-nav {
+  margin-top: 8px;
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 64px;
+  margin: 0;
+  padding: 0 30px;
+  list-style: none;
+}
+
+/* Head2: Noto Sans Black 16px, line-height 150% */
+.main-nav a {
+  display: block;
+  padding: 10px 0;
+  font-family: var(--font-noto);
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--background);
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ===== Main ===== */
+main {
+  margin-top: 16px;
+}
+
+.hero img {
+  width: 100%;
+  height: 448px;
+  object-fit: cover;
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  margin-top: 32px;
+}
+
+.box-title {
+  margin: 0;
+  padding: 10px 30px 11px;
+  background: var(--primary);
+  border-radius: 3px;
+  font-family: var(--font-noto);
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--background);
+}
+
+/* Vegetables images */
+.vegetable-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.vegetable-images img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+/* Contact text: Text2 Arial 12px, line-height 150% */
+.contact-text {
+  margin-top: 16px;
+  padding: 16px;
+  min-height: 140px;
+  background: var(--content-bg);
+  font-family: var(--font-arial);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--content-text);
+}
+
+.contact-text p {
+  margin: 0;
+}
+
+.contact-text hr {
+  height: 0;
+  margin: 9px 0 8px;
+  border: 0;
+  border-top: 1px solid var(--content-text);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.site-footer p {
+  margin: 0;
+  font-family: var(--font-arial);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--background);
+  text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1152px) {
+  .page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .site-header {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+  }
+
+  .header-actions {
+    margin-top: 0;
+  }
+
+  .main-nav ul {
+    gap: 0 32px;
+  }
+
+  .hero img {
+    height: auto;
+    aspect-ratio: 1120 / 448;
+  }
+
+  .boxes {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
